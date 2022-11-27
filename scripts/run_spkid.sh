@@ -18,7 +18,7 @@ set -o pipefail
 # - db_devel: directory of the speecon database used during development
 # - db_test:  directory of the database used in the final test
 lists=lists
-w=work
+w=work  #directorio de trabajo lp, lpcc, mfcc, gmm/lp ... fitx res
 name_exp=one
 db_devel=spk_8mu/speecon
 db_test=spk_8mu/sr_test
@@ -78,7 +78,7 @@ fi
 
 compute_lp() {
     db=$1
-    shift
+    shift #se carga el primer argumento, el primero se elimina, el segundo pasa a ser el primero...
     for filename in $(sort $*); do
         mkdir -p `dirname $w/$FEAT/$filename.$FEAT`
         EXEC="wav2lp 8 $db/$filename.wav $w/$FEAT/$filename.$FEAT"
@@ -106,14 +106,14 @@ fi
 for cmd in $*; do
    echo `date`: $cmd '---';
 
-   if [[ $cmd == train ]]; then
+   if [[ $cmd == train ]]; then #Si la orden es train
        ## @file
        # \TODO
        # Select (or change) good parameters for gmm_train
        for dir in $db_devel/BLOCK*/SES* ; do
            name=${dir/*\/}
            echo $name ----
-           EXEC="gmm_train -v 1 -T 0.001 -N 5 -m 1 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/$name.gmm $lists/class/$name.train"
+           EXEC="gmm_train -v 1 -T 0.001 -N 5 -m 2 -d $w/$FEAT -e $FEAT -g $w/gmm/$FEAT/$name.gmm $lists/class/$name.train"
            echo $EXEC && $EXEC || exit 1
            echo
        done

@@ -9,7 +9,7 @@ set -o pipefail
 ## Please, read SPTK documentation and some papers in order to implement more advanced front ends.
 
 # Base name for temporary files
-base=/tmp/$(basename $0).$$ 
+base=/tmp/$(basename $0).$$  #$$ indica el proceso
 
 # Ensure cleanup of temporary files on exit
 trap cleanup EXIT
@@ -17,7 +17,7 @@ cleanup() {
    \rm -f $base.*
 }
 
-if [[ $# != 3 ]]; then
+if [[ $# != 3 ]]; then #Asegura el numero de parametros para la función
    echo "$0 lpc_order input.wav output.lp"
    exit 1
 fi
