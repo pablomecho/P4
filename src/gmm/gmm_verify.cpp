@@ -42,7 +42,7 @@ float verify(const GMM &gmm_candidate, const GMM & gmm_world, const fmatrix &dat
 	float score = 0.0F;
 	lprobcand = gmm_candidate.logprob(dat);
 	lprobbackground = gmm_world.logprob(dat);
-	score = lprobbackground - lprobbackground;
+	score = lprobbackground - lprobcand;
 
 	return score;
 
