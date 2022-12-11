@@ -32,6 +32,16 @@ ejercicios indicados.
 - Analice el script `wav2lp.sh` y explique la misión de los distintos comandos involucrados en el *pipeline*
   principal (`sox`, `$X2X`, `$FRAME`, `$WINDOW` y `$LPC`). Explique el significado de cada una de las 
   opciones empleadas y de sus valores.
+  
+  `sox:` Permite la conversión de una señal de entrada sin cabecera a una del formato adecuado. Hay dos tipos de formatos de audio con los que SoX puede trabajar. El    "autodescriptivo", incluyen un encabezado que describen completamente  las caractrísticas de los datos de audio que siguen. El segundo tipo es "sin encabezado", en los  que se deben describir las características de los datos de audio utilizando la línea de comando Sox.
+  
+  <img src="img/sox_1.png" width="600" align="center">
+  <img src="img/sox_2.png" width="600" align="center">
+  
+  `x2x: `
+  `Frame: `
+  `Window: `
+  `LPC:`
 
 - Explique el procedimiento seguido para obtener un fichero de formato *fmatrix* a partir de los ficheros de
   salida de SPTK (líneas 45 a 51 del script `wav2lp.sh`).
