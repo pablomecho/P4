@@ -33,12 +33,15 @@ ejercicios indicados.
   principal (`sox`, `$X2X`, `$FRAME`, `$WINDOW` y `$LPC`). Explique el significado de cada una de las 
   opciones empleadas y de sus valores.
   
-  `sox:` Permite la conversión de una señal de entrada sin cabecera a una del formato adecuado. Hay dos tipos de formatos de audio con los que SoX puede trabajar. El    "autodescriptivo", incluyen un encabezado que describen completamente  las caractrísticas de los datos de audio que siguen. El segundo tipo es "sin encabezado", en los  que se deben describir las características de los datos de audio utilizando la línea de comando Sox.
+  `sox:` Permite la conversión de una señal de entrada sin cabecera a una del formato adecuado. Hay dos tipos de formatos de audio con los que SoX puede trabajar. El    "autodescriptivo", incluyen un encabezado que describen completamente  las características de los datos de audio que siguen. El segundo tipo es "sin encabezado", en los  que se deben describir las características de los datos de audio utilizando la línea de comando Sox.
   
   <img src="img/sox_1.png" width="600" align="center">
   <img src="img/sox_2.png" width="600" align="center">
   
-  `x2x: `
+  `x2x:` es una de las funciones de SPTK que permite la conversión entre distintos formatos de datos, segun lo que especificames en el comando, entre las opciones se encuentra convertir a un formato de caracteres o por ejemplo unsigned long long de 8 bytes. Se debe especificar si se quiere redondeo en el caso que un número real  sea substituido por un entero. En la imagen se pueden observar las varias posibilidades de conversión.
+  
+  <img src="img/sptk_x2x.png" width="600" align="center">
+  
   `Frame: `
   `Window: `
   `LPC:`
