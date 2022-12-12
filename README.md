@@ -42,7 +42,10 @@ ejercicios indicados.
   
   <img src="img/sptk_x2x.png" width="600" align="center">
   
-  `Frame: `
+  `Frame:` es una de las funciones de SPTK que permite dividir la señal de entrada en tramas de -l muestras (en nuestro caso 240 muestras), y con un desplazamiento entre tramas indicado por la opción -p (en nuestro caso de 80 muetras).
+  
+  <img src="img/sptk_frame.png" width="600" align="center">
+  
   `Window: `
   `LPC:`
 
