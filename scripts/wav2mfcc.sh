@@ -43,8 +43,8 @@ else
 fi
 
 # Main command for feature extration
-sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 400 -L 512 |
-	$MFCC -l 400 -m $mfcc_order -n $nfilter > $base.mfcc || exit 1
+sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 |
+	$MFCC -l 240 -m $mfcc_order -n $nfilter > $base.mfcc || exit 1
    
 
 # Our array files need a header with the number of cols and rows:
