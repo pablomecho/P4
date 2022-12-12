@@ -46,8 +46,13 @@ ejercicios indicados.
   
   <img src="img/sptk_frame.png" width="600" align="center">
   
-  `Window: `
-  `LPC:`
+  `Window:` es una función de SPTK que permite el enventanado de la señal, indicando el tamaño del frame de entrada -l (en nuestro caso 240) i el tamaño del frame de salida con -L (en este caso el mismo que el frame de entrada).
+  
+  <img src="img/sptk_window.png" width="600" align="center">
+  
+  `LPC:` función de SPTK que nos permite obtener los coeficientes LPC usando el método de Levinson-Durbin. Debemos indicarle el tamaño del frame de entrada con -l (como hemos indicado anteriormente 240) y el orden del LPC con -m (en este caso, se lo pasamos como parámetro definido por el usuario).
+  
+  <img src="img/sptk_lpc.png" width="600" align="center">
 
 - Explique el procedimiento seguido para obtener un fichero de formato *fmatrix* a partir de los ficheros de
   salida de SPTK (líneas 45 a 51 del script `wav2lp.sh`).
