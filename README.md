@@ -78,6 +78,11 @@ ejercicios indicados.
   Para obtener el número de columnas, se sabe que corresponde al número de coeficientes LPC más 1, para obtener el número de filas, se convierte la señal parametrizada a texto con el comando X2X, luego se utiliza ``wc`` con la opción ``-l`` para contar el número de líneas en el resultado. Debido a que cada fila siempre tiene ``ncol`` columnas, se puede utilizar el comando perl para dividir el número de valores en el archivo por ``ncol`` y obtener el número de filas. La operación se realiza mediante el uso de la pipeline y la instrucción ``perl -ne 'print $_/'$ncol', "\n";'``.
 
   * ¿Por qué es más conveniente el formato *fmatrix* que el SPTK?
+  
+  El formato fmatrix es un formato de texto simple y fácil de leer y procesar, lo que hace que sea muy eficiente para almacenar y manipular grandes cantidades de datos de matriz. En comparación, el formato SPTK es un formato binario que puede ser más difícil de leer y procesar, especialmente para grandes cantidades de datos.
+  La matriz resultante es muy útil para identificar correctamente los coeficientes por trama. En el archivo fmatrix, se especifican el número de filas y columnas de la matriz, seguidos de los datos almacenados en forma de lista de valores separados por espacios. Cada fila de la matriz corresponde a una trama de señal y cada columna a cada uno de los coeficientes con los que se parametriza la trama.
+  Los programas ``fmatrix_show`` y ``fmatrix_cut`` se pueden utilizar para mostrar y elegir los coeficientes 2 y 3 necesarios para el análisis, respectivamente. En resumen, el formato fmatrix permite trabajar de forma más eficiente con los datos al facilitar la identificación y manipulación de los coeficientes por trama.
+  
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales de predicción lineal
   (LPCC) en su fichero <code>scripts/wav2lpcc.sh</code>:
