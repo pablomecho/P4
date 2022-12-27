@@ -53,6 +53,18 @@ ejercicios indicados.
   `LPC:` función de SPTK que nos permite obtener los coeficientes LPC usando el método de Levinson-Durbin. Debemos indicarle el tamaño del frame de entrada con -l (como hemos indicado anteriormente 240) y el orden del LPC con -m (en este caso, se lo pasamos como parámetro definido por el usuario).
   
   <img src="img/sptk_lpc.png" width="600" align="center">
+  
+  Finalmente explicamos el funcionamiento del pipeline principal:
+  ```bash
+  sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 |
+	$LPC -l 240 -m $lpc_order > $base.lp || exit 1
+  ```
+  
+  Se utiliza sox para convertir un archivo de entrada inputfile (que se encuentra en este caso, en formato .wav) a formato raw sin encabezados utilizando la opción ``-t raw``. La señal también se codifica con signo ``-e signed`` y cada muestra se cuantifica con 16 bits ``-b 16``.
+  
+  A continuación, se utiliza ``x2x`` para convertir los datos de tipo short con signo a float con la opción ``+sf``. La señal se divide en tramas utilizando el comando ``frame`` con un tamaño de trama de 240 muestras/30 ms (``-l 240``) y un desplazamiento entre tramas de 80 muestras (``-p 80``). La señal se enventana a continuación con el comando ``window``, indicando el tamaño de trama de entrada (``-l 240``) y el de salida (``-L 240``).
+  
+  Finalmente, se obtienen los coeficientes del LPC utilizando el comando ``lpc``, indicando el tamaño de trama de entrada (``-l 240``) y el orden del LPC (``-m``), que es especificado por el usuario. El resultado se guarda en un archivo temporal ``$base.lp``.
 
 - Explique el procedimiento seguido para obtener un fichero de formato *fmatrix* a partir de los ficheros de
   salida de SPTK (líneas 45 a 51 del script `wav2lp.sh`).
