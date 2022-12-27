@@ -67,7 +67,15 @@ ejercicios indicados.
   Finalmente, se obtienen los coeficientes del LPC utilizando el comando ``lpc``, indicando el tamaño de trama de entrada (``-l 240``) y el orden del LPC (``-m``), que es especificado por el usuario. El resultado se guarda en un archivo temporal ``$base.lp``.
 
 - Explique el procedimiento seguido para obtener un fichero de formato *fmatrix* a partir de los ficheros de
-  salida de SPTK (líneas 45 a 51 del script `wav2lp.sh`).
+  salida de SPTK (líneas 49 a 51 del script `wav2lp.sh`).
+  
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+  # Our array files need a header with the number of cols and rows:
+  ncol=$((lpc_order+1)) # lpc p =>  (gain a1 a2 ... ap) 
+  nrow=`$X2X +fa < $base.lp | wc -l | perl -ne 'print $_/'$ncol', "\n";'`
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  Para obtener el número de columnas, se sabe que corresponde al número de coeficientes LPC más 1, para obtener el número de filas, se convierte la señal parametrizada a texto con el comando X2X, luego se utiliza ``wc`` con la opción ``-l`` para contar el número de líneas en el resultado. Debido a que cada fila siempre tiene ``ncol`` columnas, se puede utilizar el comando perl para dividir el número de valores en el archivo por ``ncol`` y obtener el número de filas. La operación se realiza mediante el uso de la pipeline y la instrucción ``perl -ne 'print $_/'$ncol', "\n";'``.
 
   * ¿Por qué es más conveniente el formato *fmatrix* que el SPTK?
 
