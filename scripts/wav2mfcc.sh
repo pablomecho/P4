@@ -23,7 +23,7 @@ if [[ $# != 4 ]]; then #Asegura el numero de parametros para la función
 fi
 
 mfcc_order=$1
-nfilter=2$
+nfilter=$2
 inputfile=$3
 outputfile=$4
 
@@ -44,7 +44,7 @@ fi
 
 # Main command for feature extration
 sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 |
-	$MFCC -l 240 -m $mfcc_order -n $nfilter > $base.mfcc || exit 1
+	$MFCC -l 240 -s 8 -w 0 -m $mfcc_order -n $nfilter > $base.mfcc || exit 1
    
 
 # Our array files need a header with the number of cols and rows:

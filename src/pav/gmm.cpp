@@ -132,6 +132,7 @@ namespace upc
 		return 0;
 	}
 
+
 	///Compute the best mixtures (weights, means, variances) given
 	/// -the input data
 	/// -the weights that the input data is generated for each gaussian
@@ -147,20 +148,16 @@ namespace upc
 			for (k=0; k < nmix; ++k) {
 				w[k] +=  weights[n][k];
 				for (j=0; j < vector_size; ++j) {
-								 /* sum{x w_i} */
-					mu[k][j] += weights[n][k] * data[n][j];
-								 /* sum{x^2 w_i} */
-					inv_sigma[k][j] += weights[n][k] * data[n][j] * data[n][j];
+					mu[k][j] += weights[n][k] * data[n][j]; /* sum{x w_i} */
+					inv_sigma[k][j] += weights[n][k] * data[n][j] * data[n][j]; /* sum{x^2 w_i} */
 				}
 			}
 		}
 		for (k=0; k < nmix; ++k) {
 			for (j=0; j < vector_size; ++j) {
-				mu[k][j] /= w[k];/* sum{x w_i}/sum{w_i} */
-								 /* sum{x^2 w_i}/sum{w_i} */
-				inv_sigma[k][j] /= w[k];
-								 /* 1/sigma */
-				inv_sigma[k][j] = 1.0F/sqrt(inv_sigma[k][j] - mu[k][j]*mu[k][j]);
+				mu[k][j] /= w[k]; /* sum{x w_i}/sum{w_i} */
+				inv_sigma[k][j] /= w[k]; /* sum{x^2 w_i}/sum{w_i} */
+				inv_sigma[k][j] = 1.0F/sqrt(inv_sigma[k][j] - mu[k][j]*mu[k][j]); /* 1/sigma */
 			}
 			w[k] /=  data.nrow();
 		}
@@ -170,8 +167,7 @@ namespace upc
 	///For each input data compute the probability that the data is generated from each mixture
 	///We work with log of probabilities to avoid numerical problems on intermediate results
 
-	float GMM::em_expectation(const fmatrix &data, fmatrix &weights) const
-	{
+	float GMM::em_expectation(const fmatrix &data, fmatrix &weights) const {
 		unsigned int n, k;
 		float log_prob_total, log_prob_x;
 

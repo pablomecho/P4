@@ -23,7 +23,7 @@ if [[ $# != 4 ]]; then #Asegura el numero de parametros para la función
 fi
 
 lpc_order=$1
-cepstrum_order=2$
+cepstrum_order=$2
 inputfile=$3
 outputfile=$4
 
