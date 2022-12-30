@@ -101,7 +101,7 @@ Con el comando lpcc obtenemos los coeficientes LPCC.
    sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 |
 	$MFCC -l 240 -s 8 -w 0 -m $mfcc_order -n $nfilter > $base.mfcc || exit 1
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de LPCC buscamos los coeficientes cepstrales en escala Mel (MFCC) utilizando el comando mfcc. En el comando incluimos el número de coeficientes y el banco de filtros que usamos.
 ### Extracción de características.
 
 - Inserte una imagen mostrando la dependencia entre los coeficientes 2 y 3 de las tres parametrizaciones
@@ -125,6 +125,13 @@ Con el comando lpcc obtenemos los coeficientes LPCC.
 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3 para un locutor, y rellene la tabla siguiente con los valores obtenidos.
+  
+  Usando <code>pearson</code> obtenemos los archivos .txt donde están incluidos los coeficientes de correlación.
+  
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+   pearson -N work/lp/BLOCK01/SES010/*.lp >lp_pearson.txt
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
 
   |                        | LP   | LPCC | MFCC |
   |------------------------|:----:|:----:|:----:|
