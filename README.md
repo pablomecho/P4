@@ -128,6 +128,7 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
   
   Usando <code>pearson</code> obtenemos los archivos .txt donde están incluidos los coeficientes de correlación. Los comandos son los siguientes:
   
+  Coeficientes LP:
   
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/lp/BLOCK01/SES010/*.lp >lp_pearson.txt
@@ -135,12 +136,16 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
    
    <img src="img/lp_pearson rho_2_3.png" width="250" align="center">
   
+  
+  Coeficientes LPCC:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/lpcc/BLOCK01/SES010/*.lpcc >lpcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
    <img src="img/lpcc_pearson rho_2_3.png" width="250" align="center">
    
+   
+  Coeficientes MFCC:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/mfcc/BLOCK01/SES010/*.mfcc >mfcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
