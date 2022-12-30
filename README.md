@@ -133,24 +133,26 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
    pearson -N work/lp/BLOCK01/SES010/*.lp >lp_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/lp_pearson rho_2_3.png" width="600" align="center">
+   <img src="img/lp_pearson rho_2_3.png" width="300" align="center">
   
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/lpcc/BLOCK01/SES010/*.lpcc >lpcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/lpcc_pearson rho_2_3.png" width="600" align="center">
+   <img src="img/lpcc_pearson rho_2_3.png" width="300" align="center">
    
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/mfcc/BLOCK01/SES010/*.mfcc >mfcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/mfcc_pearson rho_2_3.png" width="600" align="center">
+   <img src="img/mfcc_pearson rho_2_3.png" width="300" align="center">
+   
+   A partir de las gráficas anteriores obtenemos la rho[2][3] para cada uno de los tipos de coeficientes (lp, lpcc y mfcc):
    
 
-  |                        | LP   | LPCC | MFCC |
-  |------------------------|:----:|:----:|:----:|
-  | &rho;<sub>x</sub>[2,3] |      |      |      |
+  |                        |    LP   |  LPCC  |  MFCC   |
+  |------------------------|:-------:|:------:|:-------:|
+  | &rho;<sub>x</sub>[2,3] |-0.666745|0.303116|0.0588095|
   
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
   
