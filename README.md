@@ -133,19 +133,19 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
    pearson -N work/lp/BLOCK01/SES010/*.lp >lp_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/lp_pearson rho_2_3.png" width="300" align="center">
+   <img src="img/lp_pearson rho_2_3.png" width="250" align="center">
   
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/lpcc/BLOCK01/SES010/*.lpcc >lpcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/lpcc_pearson rho_2_3.png" width="300" align="center">
+   <img src="img/lpcc_pearson rho_2_3.png" width="250" align="center">
    
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/mfcc/BLOCK01/SES010/*.mfcc >mfcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/mfcc_pearson rho_2_3.png" width="300" align="center">
+   <img src="img/mfcc_pearson rho_2_3.png" width="250" align="center">
    
    A partir de las gráficas anteriores obtenemos la rho[2][3] para cada uno de los tipos de coeficientes (lp, lpcc y mfcc):
    
@@ -157,6 +157,9 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
   
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
+
+Según la teoría, para el caso de LPCC, el valor óptimos para trabajar con él es de 13 coeficientes.
+Para los MFCC, en cambio, es recomendable el uso de entre 24 y 40 filtros del banco Mel y también unos 13 coeficientes Mel-cepstrales. En el caso de MFCC usar más coeficientes Mel-cepstrales (a partir de 20 coeficientes) podría dar lugar a errores.
 
 ### Entrenamiento y visualización de los GMM.
 
