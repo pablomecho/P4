@@ -134,7 +134,7 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
    pearson -N work/lp/BLOCK00/SES000/*.lp >lp_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/lp_pearson rho_2_3.png" width="250" align="center">
+   <img src="img/lp_Pearson rho_2_3.png" width="250" align="center">
   
   
   Coeficientes LPCC:
