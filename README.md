@@ -91,7 +91,8 @@ ejercicios indicados.
   sox $inputfile -t raw -e signed -b 16 - | $X2X +sf | $FRAME -l 240 -p 80 | $WINDOW -l 240 -L 240 |
 	$LPC -l 240 -m $lpc_order | $LPC2C -m $lpc_order -M $cepstrum_order > $base.lpcc || exit 1
   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+Hemos usado wav2lp.sh para crear el script wav2lpcc.sh y éste último lo hemos incluido en el script meson-build para compilar el programa y tenerlo dentro. La pipeline principal de la parametrización LPCC tiene la misma forma que anteriormente, con la diferencia que ahora tenemos en cuenta que para localizar los coeficientes cepstrales, antes debemos obtener los coeficientes LPC. Por eso, sacamos los coeficientes LCP (comando *lcp*) antes de pasar los datos de parametrización cepstral al archivo .lpcc.
+Con el comando lpcc obtenemos los coeficientes LPCC.
 
 - Escriba el *pipeline* principal usado para calcular los coeficientes cepstrales en escala Mel (MFCC) en su
   fichero <code>scripts/wav2mfcc.sh</code>:
