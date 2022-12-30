@@ -108,6 +108,13 @@ ejercicios indicados.
   
   + Indique **todas** las órdenes necesarias para obtener las gráficas a partir de las señales 
     parametrizadas.
+    Primero debemos ejecutar ``run_spkid parametrización`` para obtener las señales parametrizadas  con ``LP``, ``LPCC`` y ``MFCC``.
+    A partir de este punto ya obtenemos los ficheros de las señales parametrizadas, tenemos que tener en cuenta que la primera columna es un contador de tramas, la segunda columna corresponde a la ganancia, asi que debemos escoger la quarta y quinta columna para los coeficientes 2 y 3. Utilizando el siguiente comando obtenemos un fichero txt de los coeficientes 2 y 3 para cada parametrización.
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+    fmatrix_show work/lp/BLOCK00/SES000/*.lp | egrep '^\[' | cut -f4,5 > lp_2_3.txt
+    fmatrix_show work/lpcc/BLOCK00/SES000/*.lpcc | egrep '^\[' | cut -f4,5 > lpcc_2_3.txt
+    fmatrix_show work/mfcc/BLOCK00/SES000/*.mfcc | egrep '^\[' | cut -f4,5 > mfcc_2_3.txt
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   + ¿Cuál de ellas le parece que contiene más información?
 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
