@@ -126,12 +126,27 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3 para un locutor, y rellene la tabla siguiente con los valores obtenidos.
   
-  Usando <code>pearson</code> obtenemos los archivos .txt donde están incluidos los coeficientes de correlación.
+  Usando <code>pearson</code> obtenemos los archivos .txt donde están incluidos los coeficientes de correlación. Los comandos son los siguientes:
   
-     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+  
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/lp/BLOCK01/SES010/*.lp >lp_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+   <img src="img/lp_pearson rho_2_3.png" width="600" align="center">
   
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+   pearson -N work/lpcc/BLOCK01/SES010/*.lpcc >lpcc_pearson.txt
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+   <img src="img/lpcc_pearson rho_2_3.png" width="600" align="center">
+   
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+   pearson -N work/mfcc/BLOCK01/SES010/*.mfcc >mfcc_pearson.txt
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+   <img src="img/mfcc_pearson rho_2_3.png" width="600" align="center">
+   
 
   |                        | LP   | LPCC | MFCC |
   |------------------------|:----:|:----:|:----:|
