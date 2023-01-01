@@ -124,6 +124,13 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
     <img src="Graph_2_3_coef.png" width="540" align="center">
     
   + ¿Cuál de ellas le parece que contiene más información?
+  
+  Como podemos comprovar en la gráfica, en el análisis de señales de voz, los coeficientes de predicción lineal ``LP`` tienen una relación más lineal entre sí que los 
+  coeficientes ``LPCC`` y ``MFCC``. Esto significa que los coeficientes LP están más correlados entre sí que los coeficientes LPCC y MFCC, que tienen
+  distribuciones más dispersas y, por tanto, menos correlación entre sí. Esto implica que cada coeficiente LPCC y MFCC proporciona más información respecto al otro
+  debido a su menor dependencia. 
+  En resumen, los coeficientes LPCC y MFCC proporcionan más información individualmente que los coeficientes LP debido a su menor correlación entre sí.
+  
 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
   parámetros 2 y 3 para un locutor, y rellene la tabla siguiente con los valores obtenidos.
