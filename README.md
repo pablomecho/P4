@@ -136,7 +136,7 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
    pearson -N work/lp/BLOCK01/SES017/*.lp >lp_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/lp_Pearson rho_2_3.png" width="250" align="center">
+   <img src="img/lp_pearson rho_2_3.png" width="250" align="center">
   
   
   Coeficientes LPCC:
@@ -144,14 +144,14 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
    pearson -N work/lpcc/BLOCK01/SES017/*.lpcc >lpcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   <img src="img/lpcc_Pearson rho_2_3.png" width="250" align="center">
+   <img src="img/lpcc_pearson rho_2_3.png" width="250" align="center">
    
   Coeficientes MFCC:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/mfcc/BLOCK01/SES017/*.mfcc >mfcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
-   <img src="img/mfcc_Pearson rho_2_3.png" width="250" align="center">
+   <img src="img/mfcc_pearson rho_2_3.png" width="250" align="center">
    
    A partir de las gráficas anteriores obtenemos la rho[2][3] para cada uno de los tipos de coeficientes (lp, lpcc y mfcc):
    
