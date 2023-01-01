@@ -169,6 +169,13 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
   
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
   
+  Tal y como hemos podido ver en la gráfica, el valor de correlación normalizada entre coeficientes es cercano en valor absoluto a 1 para el LP, lo que implica una
+  alta correlación. Sin embargo, para el LPCC y MFCC, el valor de correlación normalizada es cercano a 0, lo que indica una baja correlación, la información que nos
+  proporciona dos coeficientes es diferente a la que nos proporciona uno solo. Por lo que la información conjunta de los dos coeficientes nos proporciona más
+  información en el caso de LPCC y MFCC.
+  Como se ha mencionado anteriormente, una mayor dispersión de los coeficientes suele proporcionar mejores resultados, por lo que se puede concluir que una menor
+  correlación entre los coeficientes implica más información.
+  
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
 
 Según la teoría, para el caso de LPCC, el valor óptimos para trabajar con él es de 13 coeficientes.
