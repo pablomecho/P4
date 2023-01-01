@@ -121,6 +121,8 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
     
     Desde la carpeta ``P4`` podemos llamar la función ``python3 scripts/plot_coef.py``, la cual crea la gráfica para las varias parametrizaciones y la guarda en formato imagen.
     
+    <img src="Graph_2_3_coef.png" width="250" align="center">
+    
   + ¿Cuál de ellas le parece que contiene más información?
 
 - Usando el programa <code>pearson</code>, obtenga los coeficientes de correlación normalizada entre los
@@ -142,27 +144,28 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
    pearson -N work/lpcc/BLOCK01/SES017/*.lpcc >lpcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   
+   <img src="img/lpcc_Pearson rho_2_3.png" width="250" align="center">
    
   Coeficientes MFCC:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    pearson -N work/mfcc/BLOCK01/SES017/*.mfcc >mfcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
+   <img src="img/mfcc_Pearson rho_2_3.png" width="250" align="center">
    
    A partir de las gráficas anteriores obtenemos la rho[2][3] para cada uno de los tipos de coeficientes (lp, lpcc y mfcc):
    
 
   |                        |    LP   |  LPCC  |  MFCC   |
   |------------------------|:-------:|:------:|:-------:|
-  | &rho;<sub>x</sub>[2,3] |-0.881682|        |         |
+  | &rho;<sub>x</sub>[2,3] |-0.875039|0.157676|-0.177738|
   
   + Compare los resultados de <code>pearson</code> con los obtenidos gráficamente.
   
 - Según la teoría, ¿qué parámetros considera adecuados para el cálculo de los coeficientes LPCC y MFCC?
 
 Según la teoría, para el caso de LPCC, el valor óptimos para trabajar con él es de 13 coeficientes.
-Para los MFCC, en cambio, es recomendable el uso de entre 24 y 40 filtros del banco Mel y también unos 13 coeficientes Mel-cepstrales. En el caso de MFCC usar más coeficientes Mel-cepstrales (a partir de 20 coeficientes) podría dar lugar a errores.
+Para los MFCC, en cambio, es recomendable el uso de entre 24 y 40 filtros del banco Mel, en nuestro caso estamos utilizando 30 y para MFCC se usan los 13 primeros coeficientes  + 25%, por lo tanto utilizamos 16. En el caso de MFCC usar más coeficientes Mel-cepstrales (a partir de 20 coeficientes) podría dar lugar a errores.
 
 ### Entrenamiento y visualización de los GMM.
 
