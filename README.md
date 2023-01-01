@@ -121,7 +121,7 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
     
     Desde la carpeta ``P4`` podemos llamar la función ``python3 scripts/plot_coef.py``, la cual crea la gráfica para las varias parametrizaciones y la guarda en formato imagen.
     
-    <img src="Graph_2_3_coef.png" width="250" align="center">
+    <img src="Graph_2_3_coef.png" width="540" align="center">
     
   + ¿Cuál de ellas le parece que contiene más información?
 
