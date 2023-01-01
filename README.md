@@ -114,9 +114,9 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
     A partir de este punto ya obtenemos los ficheros de las señales parametrizadas, tenemos que tener en cuenta que la primera columna es un contador de tramas, la segunda columna corresponde a la ganancia, asi que debemos escoger la quarta y quinta columna para los coeficientes 2 y 3. Utilizando el siguiente comando obtenemos un fichero txt de los coeficientes 2 y 3 para cada parametrización.
     
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
-    fmatrix_show work/lp/BLOCK00/SES000/*.lp | egrep '^\[' | cut -f4,5 > lp_2_3.txt
-    fmatrix_show work/lpcc/BLOCK00/SES000/*.lpcc | egrep '^\[' | cut -f4,5 > lpcc_2_3.txt
-    fmatrix_show work/mfcc/BLOCK00/SES000/*.mfcc | egrep '^\[' | cut -f4,5 > mfcc_2_3.txt
+    fmatrix_show work/lp/BLOCK01/SES017/*.lp | egrep '^\[' | cut -f4,5 > lp_2_3.txt
+    fmatrix_show work/lpcc/BLOCK01/SES017/*.lpcc | egrep '^\[' | cut -f4,5 > lpcc_2_3.txt
+    fmatrix_show work/mfcc/BLOCK01/SES017/*.mfcc | egrep '^\[' | cut -f4,5 > mfcc_2_3.txt
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     
     Desde la carpeta ``P4`` podemos llamar la función ``python3 scripts/plot_coef.py``, la cual crea la gráfica para las varias parametrizaciones y la guarda en formato imagen.
@@ -131,7 +131,7 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
   Coeficientes LP:
   
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
-   pearson -N work/lp/BLOCK00/SES000/*.lp >lp_pearson.txt
+   pearson -N work/lp/BLOCK01/SES017/*.lp >lp_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
    <img src="img/lp_Pearson rho_2_3.png" width="250" align="center">
@@ -139,14 +139,14 @@ Igual que en el caso anterior, aplicamos los mismos pasos pero ahora en vez de L
   
   Coeficientes LPCC:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
-   pearson -N work/lpcc/BLOCK00/SES000/*.lpcc >lpcc_pearson.txt
+   pearson -N work/lpcc/BLOCK01/SES017/*.lpcc >lpcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    
    
   Coeficientes MFCC:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
-   pearson -N work/mfcc/BLOCK00/SES000/*.mfcc >mfcc_pearson.txt
+   pearson -N work/mfcc/BLOCK01/SES017/*.mfcc >mfcc_pearson.txt
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
    
