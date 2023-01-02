@@ -248,9 +248,10 @@ Complete el código necesario para realizar reconociminto del locutor y optimice
 
   <img src="img/classerr_mfcc_1.png" width="600" align="center">
   
+  
   |                  | LP       | LPCC     | MFCC     |
   |------------------|:--------:|:--------:|:--------:|
-  | Tassa d'error    |  10.96%  | 0.64%    |  1.15%   |
+  | Tasa de error    |  10.96%  | 0.64%    |  1.15%   |
 
 ### Verificación del locutor.
 
