@@ -190,7 +190,7 @@ Complete el código necesario para entrenar modelos GMM.
   
   <img src="img/GMM_mfcc.png" width="600" align="center">
   
-  Para obtener la gráfica con la función de densidad de probabilidad, ejecutamos el siguiente comando:
+  Para obtener la gráfica con la función de densidad de probabilidad, ejecutamos el siguiente comando con el script plot_gmm_feat:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
    plot_gmm_feat work/gmm/mfcc/SES017.gmm
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -198,7 +198,37 @@ Complete el código necesario para entrenar modelos GMM.
   - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
   de la página 20 del enunciado puede servirle de referencia del resultado deseado). Analice la capacidad
   del modelado GMM para diferenciar las señales de uno y otro.
-
+  Cuando tenemos el modelo GMM de nuestro locutor (17) con su correspendiente población (17) el gráfico 
+  comparativo modelo/población queda de la siguiente manera:
+  
+  <img src="img/GMM_mfcc_locutor_SES017.png" width="600" align="center">
+  
+  Esta gráfica la obtenemos con el siguiente comando usando el script plot_gmm_feat:
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+   plot_gmm_feat work/gmm/mfcc/SES017.gmm work/mfcc/BLOCK01/SES017/SA017S* &
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+   Si hacemos, en cambio, una comparación con modelo (17) y población (10) del locutor distintos, el gráfico
+   quedaría de la siguiente manera, observándose claramente las diferencias en la dispersión
+   
+   <img src="img/GMM_mfcc_no_locutor_1.png" width="600" align="center">
+   
+   Usamos el siguiente comando:
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+   plot_gmm_feat work/gmm/mfcc/SES017.gmm work/mfcc/BLOCK01/SES010/SA010S*
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+   Si comparamos estos casos (modelo y población igual  y modelo y población distintos), observamos que 
+   en el primer caso, se ve con mas detalle la dispersión dentro de la zona de reconocimiento del locutor.
+   En cambio, con población distinta, se dispersa mucho mas y no queda tan evidente el locutor.
+   
+   Observando algún ejemplo más, vemos modelo (10) y población (17):
+   <img src="img/GMM_mfcc_no_locutor_2.png" width="600" align="center">
+   
+   Usamos el siguiente comando:
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+   plot_gmm_feat work/gmm/mfcc/SES010.gmm work/mfcc/BLOCK01/SES017/SA017S
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 ### Reconocimiento del locutor.
 
 Complete el código necesario para realizar reconociminto del locutor y optimice sus parámetros.
