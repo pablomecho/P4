@@ -187,8 +187,15 @@ Complete el código necesario para entrenar modelos GMM.
 
 - Inserte una gráfica que muestre la función de densidad de probabilidad modelada por el GMM de un locutor
   para sus dos primeros coeficientes de MFCC.
-
-- Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
+  
+  <img src="img/GMM_mfcc.png" width="600" align="center">
+  
+  Para obtener la gráfica con la función de densidad de probabilidad, ejecutamos el siguiente comando:
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+   plot_gmm_feat work/gmm/mfcc/SES017.gmm
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+  - Inserte una gráfica que permita comparar los modelos y poblaciones de dos locutores distintos (la gŕafica
   de la página 20 del enunciado puede servirle de referencia del resultado deseado). Analice la capacidad
   del modelado GMM para diferenciar las señales de uno y otro.
 
