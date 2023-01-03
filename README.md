@@ -262,6 +262,12 @@ Complete el código necesario para realizar verificación del locutor y optimice
   pérdidas, y el score obtenido usando la parametrización que mejor resultado le hubiera dado en la tarea
   de reconocimiento.
   
+  |                |    LP            |  LPCC            |  MFCC            |
+  |----------------|:----------------:|:----------------:|:----------------:|
+  | Threshold      | 0.659955962659196| 0.236341440606604| 0.282019931423585|
+  | Perdidas       | 0.2960           | 0.0640           | 0.0360           |
+  | Falsa alarma   | 0.0080           | 0.0030           | 0.0070           |
+  | Cost Detection | 36.8             | 9.1              | 9.9              |
   
  
 ### Test final
