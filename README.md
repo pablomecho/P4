@@ -201,7 +201,7 @@ Complete el código necesario para entrenar modelos GMM.
   Cuando tenemos el modelo GMM de nuestro locutor (17) con su correspendiente población (17) el gráfico 
   comparativo modelo/población queda de la siguiente manera:
   
-  <img src="img/GMM_mfcc_locutor_SES017.png" width="600" align="center">
+  <img src="img/GMM_mfcc_locutor17_poblacion17.png" width="600" align="center">
   
   Esta gráfica la obtenemos con el siguiente comando usando el script plot_gmm_feat:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
@@ -211,7 +211,7 @@ Complete el código necesario para entrenar modelos GMM.
    Si hacemos, en cambio, una comparación con modelo (17) y población (10) del locutor distintos, el gráfico
    quedaría de la siguiente manera, observándose claramente las diferencias en la dispersión
    
-   <img src="img/GMM_mfcc_no_locutor_1.png" width="600" align="center">
+   <img src="img/GMM_mfcc_locutor17_poblacion10.png" width="600" align="center">
    
    Usamos el siguiente comando:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
@@ -223,7 +223,7 @@ Complete el código necesario para entrenar modelos GMM.
    En cambio, con población distinta, se dispersa mucho mas y no queda tan evidente el locutor.
    
    Observando algún ejemplo más, vemos modelo (10) y población (17):
-   <img src="img/GMM_mfcc_no_locutor_2.png" width="600" align="center">
+   <img src="img/GMM_mfcc_locutor10_poblacion17.png" width="600" align="center">
    
    Usamos el siguiente comando:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
@@ -231,11 +231,11 @@ Complete el código necesario para entrenar modelos GMM.
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
    Finalmente modelo (10) y población (10):
-   <img src="img/GMM_mfcc_no_locutor_2.png" width="600" align="center">
+   <img src="img/GMM_mfcc_locutor10_poblacion10.png" width="600" align="center">
    
    Usamos el siguiente comando:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
-   plot_gmm_feat -p 99,90,50,10 -g blue -f red work/gmm/mfcc/SES010.gmm work/mfcc/BLOCK01/SES010/SA010S*
+   plot_gmm_feat -p 99,90,50,10 -g blue -f blue work/gmm/mfcc/SES010.gmm work/mfcc/BLOCK01/SES010/SA010S*
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
 ### Reconocimiento del locutor.
