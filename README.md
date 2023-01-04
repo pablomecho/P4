@@ -205,7 +205,7 @@ Complete el código necesario para entrenar modelos GMM.
   
   Esta gráfica la obtenemos con el siguiente comando usando el script plot_gmm_feat:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
-   plot_gmm_feat work/gmm/mfcc/SES017.gmm work/mfcc/BLOCK01/SES017/SA017S* &
+   plot_gmm_feat -p 99,90,50,10 work/gmm/mfcc/SES017.gmm work/mfcc/BLOCK01/SES017/SA017S*
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
    Si hacemos, en cambio, una comparación con modelo (17) y población (10) del locutor distintos, el gráfico
@@ -215,7 +215,7 @@ Complete el código necesario para entrenar modelos GMM.
    
    Usamos el siguiente comando:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
-   plot_gmm_feat work/gmm/mfcc/SES017.gmm work/mfcc/BLOCK01/SES010/SA010S*
+   plot_gmm_feat -p 99,90,50,10 -f blue work/gmm/mfcc/SES017.gmm work/mfcc/BLOCK01/SES010/SA010S*
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
    
    Si comparamos estos casos (modelo y población igual  y modelo y población distintos), observamos que 
@@ -227,8 +227,17 @@ Complete el código necesario para entrenar modelos GMM.
    
    Usamos el siguiente comando:
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
-   plot_gmm_feat work/gmm/mfcc/SES010.gmm work/mfcc/BLOCK01/SES017/SA017S
+   plot_gmm_feat -p 99,90,50,10 -g blue -f red work/gmm/mfcc/SES010.gmm work/mfcc/BLOCK01/SES017/SA017S
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
+   Finalmente modelo (10) y población (10):
+   <img src="img/GMM_mfcc_no_locutor_2.png" width="600" align="center">
+   
+   Usamos el siguiente comando:
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~.sh
+   plot_gmm_feat -p 99,90,50,10 -g blue -f red work/gmm/mfcc/SES010.gmm work/mfcc/BLOCK01/SES010/SA010S*
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   
 ### Reconocimiento del locutor.
 
 Complete el código necesario para realizar reconociminto del locutor y optimice sus parámetros.
