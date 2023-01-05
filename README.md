@@ -274,10 +274,21 @@ Complete el código necesario para realizar verificación del locutor y optimice
   |                |    LP            |  LPCC            |  MFCC            |
   |----------------|:----------------:|:----------------:|:----------------:|
   | Threshold      | 0.659955962659196| 0.236341440606604| 0.282019931423585|
-  | Perdidas       | 0.2960           | 0.0640           | 0.0360           |
-  | Falsa alarma   | 0.0080           | 0.0030           | 0.0070           |
+  | # Pérdidas     | 0.2960           | 0.0640           | 0.0360           |
+  | # Falsa alarma | 0.0080           | 0.0030           | 0.0070           |
   | Cost Detection | 36.8             | 9.1              | 9.9              |
   
+  Después de múltiples pruebas probando diferentes inicializaciones, se obtiene el mejor score haciendo el entrenamiento del Background Model con inicializacion VQ y dejando el otro entrenamiento de gmm's con inicialización aleatoria, dando el siguiente coste:
+  
+  <img src="img/verifyerr_lpcc_0_1" width="600" align="center">
+  
+  Por lo tanto la tabla con mejor score es la siguiente:
+  |                |    LPCC          |  
+  |----------------|:----------------:|
+  | Threshold      | 0.119518601153797| 
+  | # Pérdidas     | 13/250=0.0520    |
+  | # Falsa alarma | 2/1000=0.0020    | 
+  | Cost Detection | 7.0              |
  
 ### Test final
 
