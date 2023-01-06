@@ -30,7 +30,7 @@ TRAIN_OPTS="-i 0 -T 0.001 -N 32 -m 64"
 
 
 #initial "-i 0 -T 0.0001 -N 10 -m 5"
-WORLD_OPTS="-i 0 -T 0.001 -N 64 -m 32"
+WORLD_OPTS="-i 1 -T 0.001 -N 64 -m 32"
 
 
 # Ficheros de resultados del reconocimiento y verificación
@@ -228,7 +228,7 @@ for cmd in $*; do
        echo $EXEC && $EXEC | tee $TEMP_VERIF || exit 1
         #coger el valor que nos de mejor resultado
        perl -ane 'print "$F[0]\t$F[1]\t";
-            if ($F[2] > 5.41203) {print "1\n"}
+            if ($F[2] > 0.119518601153797) {print "1\n"}
             else {print "0\n"}' $TEMP_VERIF | tee $FINAL_VERIF
        
    
