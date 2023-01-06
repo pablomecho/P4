@@ -280,7 +280,7 @@ Complete el código necesario para realizar verificación del locutor y optimice
   
   Después de múltiples pruebas probando diferentes inicializaciones, se obtiene el mejor score haciendo el entrenamiento del Background Model con inicializacion VQ y dejando el otro entrenamiento de gmm's con inicialización aleatoria, dando el siguiente coste:
   
-  <img src="img/verifyerr_lpcc_0_1" width="600" align="center">
+  <img src="img/verifyerr_lpcc_0_1.png" width="600" align="center">
   
   Por lo tanto la tabla con mejor score es la siguiente:
   |                |    LPCC          |  
