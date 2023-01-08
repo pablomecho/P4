@@ -55,6 +55,7 @@ int main(int argc, const char *argv[])
 	///
 	/// Other alternatives are: vq, em_split... See the options of the program and place each
 	/// initicialization accordingly.
+	/// \DONE Hecha la inizializacion aleatoria, por VQ y por em split.
 	switch (init_method) {
 		case 0:
 			gmm.random_init(data, nmix);
@@ -70,6 +71,7 @@ int main(int argc, const char *argv[])
 	}
 
 	/// \TODO Apply EM to estimate GMM parameters (complete the funcion in gmm.cpp)
+	/// \DONE Finalizada la inicialización por Expectation Maximization
 	gmm.em(data, em_iterations, em_threshold, verbose);
 	//Create directory, if it is needed
 	gmm_filename.checkDir();

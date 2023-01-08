@@ -112,6 +112,7 @@ namespace upc
 
 		for (n=0; n<data.nrow(); ++n) {
 			/// \TODO Compute the logprob of a single frame of the input data; you can use gmm_logprob() above.
+			/// \DONE Claculamos la probabilidad
 			lprob += gmm_logprob(data[n]);
 		}
 		return lprob/data.nrow();
@@ -210,6 +211,7 @@ namespace upc
 			//
 			// Update old_prob, new_prob and inc_prob in order to stop the loop if logprob does not
 			// increase more than inc_threshold.
+			/// \DONE Completado el algoritmo de expectation maximization.
 			new_prob=em_expectation(data, weights);
 			em_maximization(data, weights);
 			inc_prob = new_prob - old_prob;

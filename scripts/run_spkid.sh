@@ -17,6 +17,7 @@ set -o pipefail
 # - name_exp: name of the experiment
 # - db_devel: directory of the speecon database used during development
 # - db_test:  directory of the database used in the final test
+# \DONE Hecho en clase
 lists=lists
 w=work  #directorio de trabajo lp, lpcc, mfcc, gmm/lp ... fitx res
 name_exp=one
@@ -85,6 +86,7 @@ fi
 # \TODO
 # Create your own features with the name compute_$FEAT(), where $FEAT is the name of the feature.
 # - Select (or change) different features, options, etc. Make you best choice and try several options.
+# \DONE Creadas las diferentes features, lp, lpcc y mfcc.
 
 compute_lp() {
     db=$1
@@ -140,6 +142,8 @@ for cmd in $*; do
        ## @file
        # \TODO
        # Select (or change) good parameters for gmm_train
+       # \DONE Hemos definido una variable TRAIN_OPTS, en el inicio del fichero para facilitar el cambio de parametros
+       # Parámetros finales: "-i 0 -T 0.001 -N 32 -m 64"
        for dir in $db_devel/BLOCK*/SES* ; do
            name=${dir/*\/}
            echo $name ----
@@ -169,6 +173,8 @@ for cmd in $*; do
        # Implement 'trainworld' in order to get a Universal Background Model for speaker verification
        #
        # - The name of the world model will be used by gmm_verify in the 'verify' command below.
+       # \DONE Implementado trainworld, hecho en clase, definimos la variable WORLD_OPTS para facilitar la experimentacion con parámetros.
+       # Parámetros finales: "-i 1 -T 0.001 -N 64 -m 32"
        EXEC="gmm_train -v 1 $WORLD_OPTS -d $w/$FEAT/ -e $FEAT -g $w/gmm/$FEAT/$world.gmm  $lists/verif/$world.train"
        echo $EXEC && $EXEC || exit 1
 
@@ -181,6 +187,7 @@ for cmd in $*; do
        #   For instance:
        #   * <code> gmm_verify ... > $LOG_VERIF </code>
        #   * <code> gmm_verify ... | tee $LOG_VERIF </code>
+       # \DONE Implementado verify
        EXEC="gmm_verify -d $w/$FEAT/ -e $FEAT -D $w/gmm/$FEAT/ -E gmm -w $world lists/gmm.list $lists/verif/all.test $lists/verif/all.test.candidates"
        echo $EXEC && $EXEC | tee $TEMP_VERIF || exit 1
 
@@ -202,6 +209,7 @@ for cmd in $*; do
        #
        # El fichero con el resultado del reconocimiento debe llamarse $FINAL_CLASS, que deberá estar en el
        # directorio de la práctica (PAV/P4).
+       # \DONE Implementado finalclass
        compute_$FEAT $db_test $lists/final/class.test
        EXEC="gmm_classify -d $w/$FEAT -e $FEAT -D $w/gmm/$FEAT -E gmm $lists/gmm.list $lists/final/class.test"
         echo $EXEC && $EXEC | tee $FINAL_CLASS || exit 1
@@ -223,6 +231,7 @@ for cmd in $*; do
        # candidato para la señal a verificar. En $FINAL_VERIF se pide que la tercera columna sea 1,
        # si se considera al candidato legítimo, o 0, si se considera impostor. Las instrucciones para
        # realizar este cambio de formato están en el enunciado de la práctica.
+       # \DONE Implementado finalverif, recordar que es necesario poner el threshold óptimo.
        compute_$FEAT $db_test $lists/final/verif.test
        EXEC="gmm_verify -d $w/$FEAT/ -e $FEAT -D $w/gmm/$FEAT/ -E gmm -w $world lists/gmm.list lists/final/verif.test lists/final/verif.test.candidates"
        echo $EXEC && $EXEC | tee $TEMP_VERIF || exit 1
